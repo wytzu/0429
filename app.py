@@ -3,6 +3,8 @@ import re
 
 app = Flask(__name__)
 
+import re
+
 def validate_taiwan_id(id_number):
     # Check if ID number is 10 characters long
     if len(id_number) != 10:
@@ -17,6 +19,14 @@ def validate_taiwan_id(id_number):
         return False
 
     return True
+
+# 測試
+id_number = "A123456789"
+if validate_taiwan_id(id_number):
+    print("身分證號碼正確")
+else:
+    print("身分證號碼不正確")
+
 
 @app.route('/')
 def form():

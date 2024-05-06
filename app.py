@@ -32,6 +32,17 @@ else:
 def form():
     return render_template('input_data.html')
 
+<html>
+<head>
+    <title>Input Data</title>
+    <style>
+        body {
+            background-color: lightgrey; /* 背景色設定為淺灰色 */
+        }
+    </style>
+</head>
+<body>
+
 @app.route('/submit_form', methods=['POST'])
 def handle_form():
     id_number = request.form.get('id')

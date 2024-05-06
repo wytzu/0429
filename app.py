@@ -3,6 +3,21 @@ import re
 
 app = Flask(__name__)
 
+def validate_taiwan_id(id_number):
+    # Check if ID number is 10 characters long
+    if len(id_number) != 10:
+        return False
+
+    # Check if the first character is an English letter
+    if not id_number[0].isalpha():
+        return False
+
+    # Check if the rest of the characters are digits
+    if not id_number[1:].isdigit():
+        return False
+
+    return True
+
 @app.route('/')
 def form():
     return render_template('input_data.html')

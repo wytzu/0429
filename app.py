@@ -3,8 +3,6 @@ import re
 
 app = Flask(__name__)
 
-import re
-
 def validate_taiwan_id(id_number):
     # Check if ID number is 10 characters long
     if len(id_number) != 10:
@@ -31,17 +29,6 @@ else:
 @app.route('/')
 def form():
     return render_template('input_data.html')
-
-<html>
-<head>
-    <title>Input Data</title>
-    <style>
-        body {
-            background-color: lightgrey; /* 背景色設定為淺灰色 */
-        }
-    </style>
-</head>
-<body>
 
 @app.route('/submit_form', methods=['POST'])
 def handle_form():
@@ -70,4 +57,5 @@ def handle_form():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)  # Listen on all available network interfaces and port 80
+
 

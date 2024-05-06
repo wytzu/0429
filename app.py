@@ -29,9 +29,9 @@ def handle_form():
     gender = request.form.get('gender')
     email = request.form.get('email')
 
-    # Validate ID number (assuming it's numeric)
-    if not re.match(r'^\d+$', id_number):
-        return "Invalid ID number", 400
+    # Validate ID number using the custom function
+    if not validate_taiwan_id(id_number):
+        return "Invalid Taiwan ID number", 400
 
     # Validate name (assuming it's alphabetic)
     if not re.match(r'^[A-Za-z\s]+$', name):
